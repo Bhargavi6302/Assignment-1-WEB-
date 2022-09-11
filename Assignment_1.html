@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <style>
+      * {
+  border: 0;
+  padding: 0;
+}
+table,
+th,
+tr,
+td {
+  border: solid dodgerblue;
+  border-collapse: collapse;
+  padding: 5px;
+  font-size: 20px;
+  font-family: "Times new Stamp";
+}
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+.center .caption {
+  padding: 10px 0 30px 0;
+  font-size: 35px;
+  font-family: "Lucida Calligraphy";
+  text-decoration: underline;
+  color: rgb(239, 116, 15);
+  font-weight: bold;
+}
+.center th {
+  font-size: 22px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#data {
+  margin-bottom: 10px;
+}
+#data input,
+button {
+  padding: 10px;
+  width: 90px;
+}
+.center {
+  counter-reset: serial-number;
+}
+.center td:first-child:before {
+  counter-increment: serial-number;
+  content: counter(serial-number);
+  text-align: center;
+}
+.button_top,
+.button_bottom {
+  background-color: dodgerblue;
+  border: 2px solid rgb(18, 16, 17);
+  color: black;
+  text-align: center;
+  font-weight: bold;
+  font-family: "Times New Stamp";
+  font-size: 20px;
+  display: inline-block;
+  margin: auto -600px auto 600px;
+  margin-top: 50px;
+  cursor: pointer;
+  width: fit-content;
+}
+
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <table class="center" id="myTable">
+      <caption class="caption">
+        Assignment-1
+      </caption>
+      <thead>
+        <th scope="col">Sl.No.</th>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">City</th>
+        <th scope="col">Country</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="serial_number">&nbsp;</td>
+          <td>Bhargavi</td>
+          <td>Oggu</td>
+          <td>Nellore</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number">&nbsp;</td>
+          <td>Supriya</td>
+          <td>Nukkala</td>
+          <td>Tirupati</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number">&nbsp;</td>
+          <td>chandana</td>
+          <td>Magunta</td>
+          <td>Vijaywada</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number">&nbsp;</td>
+          <td>Sai</td>
+          <td>Pennam</td>
+          <td>Chennur</td>
+          <td>India</td>
+        </tr>
+        <tr>
+          <td class="serial_number">&nbsp;</td>
+          <td>Mallikharjuna</td>
+          <td>Sami</td>
+          <td>Ananthapur</td>
+          <td>India</td>
+        </tr>
+      </tbody>
+    </table>
+    <br />
+
+    <button class="button_top" type="button" onclick="myFunction_top()">
+      Add row to top
+    </button>
+    <button class="button_bottom" type="button" onclick="myFunction_bottom()">
+      Add row to bottom
+    </button>
+
+    <script>
+      function myFunction_top() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "";
+        cell2.innerHTML = "Bhargavi";
+        cell3.innerHTML = "Oggu";
+        cell4.innerHTML = "Nellore";
+        cell5.innerHTML = "India";
+      }
+      function myFunction_bottom() {
+        var table = document.getElementById("myTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        cell1.innerHTML = "";
+        cell2.innerHTML = "Mallikharjuna";
+        cell3.innerHTML = "sami";
+        cell4.innerHTML = "Ananthapur";
+        cell5.innerHTML = "India";
+      }
+    </script>
+  </body>
+</html>
